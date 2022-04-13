@@ -1,10 +1,6 @@
 const express = require("express");
-var MongoClient = require("mongodb").MongoClient;
 const Nanoid = require("nanoid");
-
-MongoClient(process.env.MONGODB_URL, {
-  useNewUrlParser: true
-});
+const fs = require("fs");
 
 console.log(`UUID with Nano ID sync: ${Nanoid.nanoid()}`);
 
@@ -20,6 +16,15 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.render("index", { name: "Prince hatty" });
+});
+
+// creating the routes for saving the form
+
+app.get("/form_save", (req, res) => {
+  res.redirect("/new");
+});
+app.post("/form_save", (req, res) => {
+  res.redirect("/new");
 });
 
 // creating the form
