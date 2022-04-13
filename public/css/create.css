@@ -1,0 +1,244 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+:root {
+  /* deafualt for all */
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* end default for all of the stylesheet */
+  --btn-primary: #673ab7;
+  --btn-primary-text-size: 17px; /* add if needed */
+  /* adding the class for the centering of the btn */
+  --btn-content-center: center;
+  /* <=== end ==> */
+}
+
+body {
+  width: 100%;
+  background-color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-smooth: inherit;
+  font-size: 13px;
+}
+/*  */
+
+/* genaral and all predifind class and the components  */
+button {
+  border: none;
+  outline: none;
+}
+button:hover {
+  box-shadow: 0 2px 1px -1px rgb(103 58 183 / 20%),
+    0 1px 1px 0 rgb(103 58 183 / 14%), 0 1px 3px 0 rgb(103 58 183 / 12%);
+}
+.lg-btn {
+  width: 90px;
+  height: 100%;
+}
+.btn {
+  padding: 10px 7px;
+}
+.center {
+  text-align: var(--btn-content-center);
+}
+.btn-primary {
+  background-color: var(--btn-primary);
+  /* box-shadow: var(--shadow); */
+  color: white;
+  border-radius: 5px;
+  margin: 0px 10px;
+}
+/* icon big class */
+.i-big {
+  font-size: 16px;
+}
+/* <==end icon big class ==> */
+/* <=== end ===> */
+
+/*  */
+.form_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  position: fixed;
+}
+.form_header > h1 {
+  width: 100%;
+  text-align: center;
+}
+.right_nav {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  float: right;
+  align-items: center;
+}
+.left_nav {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  float: left;
+}
+.logo > img {
+  height: 35px;
+  margin: 10px;
+}
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.main_conatinr {
+  width: 95%;
+  padding: 110px 10px;
+  margin: auto;
+}
+body > h1 {
+  text-align: center;
+  margin: 15px 0px;
+}
+.conatent {
+  width: 740px;
+  max-width: 90vw;
+  margin: auto;
+}
+.header {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  border-top: 10px solid blue;
+}
+textarea {
+  background-color: white;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+  transition: all 0.5s;
+  width: 100%;
+  margin: 15px 0px;
+  font-size: 15px;
+  padding: 7px 5px;
+  line-height: 100%;
+  resize: none;
+  display: flex;
+  align-items: center;
+  height: 15px;
+}
+textarea:focus-within {
+  background-color: whitesmoke;
+  border-bottom: 1px solid rgba(0, 4, 255);
+  transition: all 0.5s;
+  /* font-weight: 500; */
+}
+/* form name_ area */
+.flex-form_details {
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+.Form_name {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+  transition: all 0.5s;
+  margin: 15px 0px;
+  font-size: 15px;
+  padding: 7px 5px;
+}
+.Form_name:focus-within {
+  background-color: whitesmoke;
+  border-bottom: 1px solid rgba(0, 4, 255);
+  transition: all 0.5s;
+  /* font-weight: 500; */
+}
+
+/* <== end from name are ===> */
+
+.inp-lg {
+  font-size: 35px !important;
+  text-transform: capitalize !important;
+  height: 53px !important;
+  overflow: hidden;
+}
+.inp-md {
+  font-size: 25px !important;
+  text-transform: capitalize !important;
+  height: 40px !important;
+}
+.inp-st {
+  text-transform: capitalize !important;
+  height: 30px !important;
+}
+.main_area {
+  margin: 10px 0px;
+  display: flex;
+}
+.create_new_area {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 10px solid rgba(0, 0, 255, 0.671);
+  width: 100%;
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+}
+.add_image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.fade {
+  opacity: 0.7;
+}
+.add_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.other_fuction {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  justify-content: center;
+}
+i {
+  border-radius: 150px;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+i:hover {
+  background-color: rgba(0, 0, 0, 0.068);
+}
+.add_compenents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border-radius: 6px;
+  flex-direction: column;
+  padding: 10px 20px;
+  background-color: aqua;
+}
+/* adding the new_element  */
+.new_element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+INPUT[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* end adding the new_element  */
