@@ -24,7 +24,7 @@ app.get("/form_save", (req, res) => {
   res.redirect("/new");
 });
 app.post("/form_save", (req, res) => {
-  res.redirect("/new");
+  console.log(req.body);
 });
 
 // creating the form
