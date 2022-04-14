@@ -22,14 +22,15 @@ const form = {
   Question2: document.getElementsByName("Question-2")[0],
   question2_radio1_text: document.getElementsByName(
     " question-2_radio1_text"
-  )[0]
+  )[0],
+  botton_left_alert: document.getElementById("botton_left-alert")
 };
 
 const request = new XMLHttpRequest();
 // const formdata = new FormData();
 
 form.save_btn.addEventListener("click", () => {
-  console.log(form);
+  form.botton_left_alert.innerHTML = console.log(form);
   console.log("save clicked");
   request.onload = () => {
     console.log("onload event");

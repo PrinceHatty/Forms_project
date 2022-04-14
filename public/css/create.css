@@ -56,7 +56,19 @@ button:hover {
 }
 /* <==end icon big class ==> */
 /* <=== end ===> */
+/* popup and alerts css */
+.popup_alert {
+  position: fixed;
+  bottom: 10px;
+  padding: 10px;
+  background-color: rgb(0 0 0 / 91%);
+  color: white;
+  left: 10px;
+  border-radius: 4px;
+  width: 230px;
+}
 
+/* <===end===> */
 /*  */
 .form_header {
   display: flex;
