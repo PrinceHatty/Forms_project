@@ -5,6 +5,7 @@ const fs = require("fs");
 console.log(`UUID with Nano ID sync: ${Nanoid.nanoid()}`);
 
 const app = express();
+app.use(express.urlencoded());
 
 // view engine
 app.set("view engine", "ejs");

@@ -12,17 +12,17 @@
 // start here > >
 const form = {
   save_btn: document.getElementsByName("save")[0],
-  form_name: document.getElementsByClassName("form_name"),
-  form_title: document.getElementsByClassName("form_title"),
-  form_description: document.getElementsByClassName("form_description"),
-  Question1: document.getElementsByClassName("Question-1"),
-  question1_radio1_text: document.getElementsByClassName(
+  form_name: document.getElementsByName("form_name")[0],
+  form_title: document.getElementsByName("form_title")[0],
+  form_description: document.getElementsByName("form_description")[0],
+  Question1: document.getElementsByName("Question-1")[0],
+  question1_radio1_text: document.getElementsByName(
     "question-1_radio1_text"
-  ),
-  Question2: document.getElementsByClassName("Question-2"),
-  question2_radio1_text: document.getElementsByClassName(
+  )[0],
+  Question2: document.getElementsByName("Question-2")[0],
+  question2_radio1_text: document.getElementsByName(
     " question-2_radio1_text"
-  )
+  )[0]
 };
 
 const request = new XMLHttpRequest();
@@ -37,12 +37,9 @@ form.save_btn.addEventListener("click", () => {
   request.open("post", "/form_save");
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  const form_data = {
-    form_name: form.form_name.value,
-    form_title: form.form_title.value,
-    " form_description": form.form_description.value
-  };
+  const form_data = `form_name: ${form.form_name.value},form_title: ${form.form_title.value},form_description: ${form.form_description.value}&,Question1 :${form.Question1.value}& Question_opion_text:${form.question1_radio1_text.value}`;
 
+  console.log(form_data);
   request.send(form_data);
 });
 
