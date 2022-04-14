@@ -30,11 +30,13 @@ const request = new XMLHttpRequest();
 // const formdata = new FormData();
 
 form.save_btn.addEventListener("click", () => {
-  form.botton_left_alert.innerHTML = "Savving....";
+  form.botton_left_alert.style.visibility = "visible";
+  form.botton_left_alert.innerHTML = "Saving....";
   console.log(form);
   console.log("save clicked");
   request.onload = () => {
-    form.botton_left_alert.innerHTML = "Sav";
+    form.botton_left_alert.innerHTML = "Form Saved Scussfully.";
+
     console.log("onload event");
   };
   request.open("post", "/form_save");
