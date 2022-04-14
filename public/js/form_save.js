@@ -35,17 +35,50 @@ form.save_btn.addEventListener("click", () => {
   console.log(form);
   console.log("save clicked");
   request.onload = () => {
-    form.botton_left_alert.innerHTML = "Form Saved Scussfully.";
+    form.botton_left_alert.innerHTML = "Form Saved Scussfully....";
 
     console.log("onload event");
   };
   request.open("post", "/form_save");
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.setRequestHeader("Content-type", "application/json");
+  request.responseType = "blob";
 
-  const form_data = `form_name: ${form.form_name.value},form_title: ${form.form_title.value},form_description: ${form.form_description.value}&,Question1 :${form.Question1.value}& Question_opion_text:${form.question1_radio1_text.value}`;
+  const form_data = {
+    form_id: "",
+    form_owner_id: ";asjnacpqwjpcsdjc",
+    formname: form.form_name.value,
+    formtitle: form.form_title.value,
+    formdicscription: form.form_description.value,
+    Question1: {
+      title: {
+        Question_titile: form.Question1.value,
+        Options: {
+          1: form.question1_radio1_text
+        }
+      }
+    },
+    Question2: [
+      {
+        title: [
+          {
+            Question_titile: form.Question2.value,
+            Options: [
+              {
+                1: form.question2_radio1_text
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  };
+  const stringied = JSON.stringify(form_data);
 
-  console.log(form_data);
-  request.send(form_data);
+  // const form_data = `form_name: ${form.form_name.value},form_title: ${form.form_title.value},form_description: ${form.form_description.value}&,Question1 :${form.Question1.value}& Question_opion_text:${form.question1_radio1_text.value}`;
+
+  console.log(stringied);
+  console.log(request);
+  request.send(stringied);
 });
 
 // <=== end here ===>
