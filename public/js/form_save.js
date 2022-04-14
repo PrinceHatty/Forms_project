@@ -30,9 +30,11 @@ const request = new XMLHttpRequest();
 // const formdata = new FormData();
 
 form.save_btn.addEventListener("click", () => {
-  form.botton_left_alert.innerHTML = console.log(form);
+  form.botton_left_alert.innerHTML = "Savving....";
+  console.log(form);
   console.log("save clicked");
   request.onload = () => {
+    form.botton_left_alert.innerHTML = "Sav";
     console.log("onload event");
   };
   request.open("post", "/form_save");
