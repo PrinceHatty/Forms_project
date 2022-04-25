@@ -52,25 +52,23 @@ form.save_btn.addEventListener("click", () => {
     Question1: {
       title: {
         Question_titile: form.Question1.value,
-        Options: {
-          1: form.question1_radio1_text
-        }
-      }
-    },
-    Question2: [
-      {
-        title: [
+        Options: [
           {
-            Question_titile: form.Question2.value,
-            Options: [
-              {
-                1: form.question2_radio1_text
-              }
-            ]
+            1: form.question1_radio1_text
           }
         ]
       }
-    ]
+    },
+    Question2: {
+      title: {
+        Question_titile: form.Question2.value,
+        Options: [
+          {
+            1: form.question2_radio2_text
+          }
+        ]
+      }
+    }
   };
   const stringied = JSON.stringify(form_data);
 

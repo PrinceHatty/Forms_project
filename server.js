@@ -1,6 +1,10 @@
 const express = require("express");
 const Nanoid = require("nanoid");
 const fs = require("fs");
+
+let rawdata = fs.readFileSync("student-2.json");
+let users = JSON.parse(rawdata);
+
 // const file_writing_user_data = require("./User_data/forms.json");
 
 console.log(`UUID with Nano ID sync: ${Nanoid.nanoid()}`);
@@ -35,9 +39,20 @@ app.post("/form_save", (req, res) => {
 
 //creating routes for viewing the form
 app.get("/:owner/d/:formid/view", (req, res) => {
+  let data = "";
+
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].form_owner_id === req.params.owner) {
+      if (users[i].form_id === req.params.owner) {
+        console.log("found!");
+        data += users[i];
+      }
+    }
+  }
   res.render("view-from.ejs", {
     form_owner: req.params.owner,
-    form_id: req.params.formid
+    form_id: req.params.formid,
+    data: data
   });
 });
 
